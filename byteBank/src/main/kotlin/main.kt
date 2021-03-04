@@ -1,9 +1,9 @@
 fun main() {
     println("Bem vindo ao byte bank")
 
-    val contalUCAS: Conta = Conta("Lucas", 2, 100.0)
-    val contaCarlos: Conta = Conta(saldo = 100.0, numero =  2, titular = "Lucas", )//labels, você passa os paramentros de maneira explicita e assim você não precisa passar na ordem que o construtor exige mas no final ele será passado de maneira correta
-    val contaFran: Conta = Conta("Francine", 1, 2000.0)
+    val contalUCAS: Conta = Conta("Lucas",100.0 ,2, )
+    val contaCarlos: Conta = Conta(saldo = 100.0, numero =  2, titular = "Lucas")//labels, você passa os paramentros de maneira explicita e assim você não precisa passar na ordem que o construtor exige mas no final ele será passado de maneira correta
+    val contaFran: Conta = Conta("Francine",2000.0, 1)
 
     contalUCAS.depositar(50.0)
     println(contalUCAS.titular)
@@ -16,7 +16,6 @@ fun main() {
     println("Sacando na conta do Francine")
     contaFran.sacar(400.0)
     println(contaFran.saldo)
-
 
     if (contalUCAS.tranferencia(contaFran, 55.0)) {
         println("Transfarencia para a fran efetuada");

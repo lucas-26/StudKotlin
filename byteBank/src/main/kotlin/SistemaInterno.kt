@@ -1,7 +1,7 @@
 class SistemaInterno {
 
-    fun entra(funcionario: FuncionarioAdmin, senha: Int){
-        if(funcionario.autentica(senha)){
+    fun entra(funcionario: Autenticavel, senha: Int){
+        if(funcionario.autenticar(senha)){
             print("Bem vindo")
         }
         else {

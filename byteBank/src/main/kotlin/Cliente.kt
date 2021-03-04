@@ -1,6 +1,7 @@
 class Cliente(
     val nome:String,
     val cpf: String,
-    val senha: Int
-) {
+    override val senha: Int
+): Autenticavel {
+
 }

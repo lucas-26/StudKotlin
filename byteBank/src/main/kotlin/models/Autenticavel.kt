@@ -1,3 +1,5 @@
+package models
+
 interface Autenticavel {
 
     val senha: Int

@@ -1,9 +1,14 @@
+package tests
+
+import models.Conta
+import models.ContaCorrente
+
 fun main() {
     println("Bem vindo ao byte bank")
 
-    val contalUCAS: Conta = Conta("Lucas",100.0 ,2, )
-    val contaCarlos: Conta = Conta(saldo = 100.0, numero =  2, titular = "Lucas")//labels, você passa os paramentros de maneira explicita e assim você não precisa passar na ordem que o construtor exige mas no final ele será passado de maneira correta
-    val contaFran: Conta = Conta("Francine",2000.0, 1)
+    val contalUCAS: Conta = ContaCorrente(titular = "Lucas",numero = 2)
+    val contaCarlos: Conta = ContaCorrente( numero =  2, titular = "Lucas")//labels, você passa os paramentros de maneira explicita e assim você não precisa passar na ordem que o construtor exige mas no final ele será passado de maneira correta
+    val contaFran: Conta = ContaCorrente("Francine",1)
 
     contalUCAS.depositar(50.0)
     println(contalUCAS.titular)
@@ -17,7 +22,7 @@ fun main() {
     contaFran.sacar(400.0)
     println(contaFran.saldo)
 
-    if (contalUCAS.tranferencia(contaFran, 55.0)) {
+    if (contalUCAS.transferencia(contaFran, 55.0)) {
         println("Transfarencia para a fran efetuada");
     } else {
         println("falhou");

@@ -1,3 +1,5 @@
+package models
+
 abstract class Funcionario(val nome:String, val cpf:String, val salario:Double) { //ao usar o open o kotlin permite que outras classes herdem de funcionario
 
     abstract val bonificacao: Double //quando a funcao vira abstrata ela não pode ter implementação

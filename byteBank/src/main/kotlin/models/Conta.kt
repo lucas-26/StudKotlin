@@ -1,3 +1,5 @@
+package models
+
 abstract class Conta(var titular:String, var numero:Int) { //contrutor primario, os parametros do construtor primario e do construtor secundario não podem ser iguais
     //var titular: String = titular;                //ao usar o var no construtor estamos sendo idiomaticos em relação ao kotlin pois ao inserir assim ele já sabe que são as nossas properties que estão vindo pelo construtor
 //    var numero = 0
@@ -33,7 +35,7 @@ abstract class Conta(var titular:String, var numero:Int) { //contrutor primario,
 //    }
 //
     abstract fun transferencia(destino: Conta, valor: Double): Boolean;
-//    fun tranferencia(destino: Conta, valor: Double): Boolean {
+//    fun tranferencia(destino: models.Conta, valor: Double): Boolean {
 //        if (this.saldo >= valor) {
 //            this.sacar(valor);
 //            destino.depositar(valor);

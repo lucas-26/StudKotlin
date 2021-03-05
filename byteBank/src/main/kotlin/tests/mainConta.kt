@@ -1,3 +1,8 @@
+package tests
+
+import models.ContaCorrente
+import models.ContaPoupanca
+
 fun main() {
     println("Bem vindo ao byte Bank");
 

@@ -1,3 +1,5 @@
+package tests
+
 fun main() { //procedural
     for (i in 1..5) { //1 até 5,
         println("Bem vindo ao byte bank")
@@ -12,7 +14,7 @@ fun main() { //procedural
         saldo -= 1000
         println(titular);
         println("titular: $titular");//string template
-        println("numero Conta: $numeroConta");
+        println("numero models.Conta: $numeroConta");
         println("saldo: $saldo");
         println("------------------------------------------------------");
 
@@ -22,17 +24,17 @@ fun main() { //procedural
 
 fun testaCondicoes(saldo: Double) {
     if (saldo > 0.0) {
-        println("Conta positiva");
+        println("models.Conta positiva");
     } else if (saldo == 0.0) {
         println("conta neutra");
     } else {
-        println("Conta negativa");
+        println("models.Conta negativa");
     }
 
     when { //semelhante com um switch case
-        saldo > 0.0 -> println("Conta positiva");
+        saldo > 0.0 -> println("models.Conta positiva");
         saldo == 0.0 -> println("conta neutra");
-        else -> println("Conta negativa");
+        else -> println("models.Conta negativa");
     }
 }
 

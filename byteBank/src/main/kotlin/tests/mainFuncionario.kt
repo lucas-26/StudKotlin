@@ -1,3 +1,9 @@
+package tests
+
+import models.CalculadoraBonificacao
+import models.Diretor
+import models.Gerente
+
 fun main() {
 
     val luan = Diretor(nome = "Luan", cpf = "91123222312",salario = 200.0, senha = 1234, plr = 5000.0);
@@ -5,7 +11,7 @@ fun main() {
 
     println("o funcionario ${luan.nome}, bonificacao ${luan.bonificacao}")
 
-    val calculador:CalculadoraBonificacao = CalculadoraBonificacao()
+    val calculador: CalculadoraBonificacao = CalculadoraBonificacao()
     calculador.registra(luan)
     calculador.registra(lars)
 

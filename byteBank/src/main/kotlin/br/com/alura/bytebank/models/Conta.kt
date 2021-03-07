@@ -1,5 +1,7 @@
 package br.com.alura.bytebank.models
 
+import br.com.alura.bytebank.exception.SaldoInsuficienteException
+
 //var totalContas:Int = 0  <- isso é uma variavel/property global
 //    private set;
 
@@ -47,13 +49,12 @@ abstract class Conta(
 //        }
 //    }
 //
-    abstract fun transferencia(destino: Conta, valor: Double): Boolean;
-//    fun tranferencia(destino: br.com.alura.bytebank.models.Conta, valor: Double): Boolean {
-//        if (this.saldo >= valor) {
-//            this.sacar(valor);
-//            destino.depositar(valor);
-//            return true;
-//        }
-//        return false;
-//    }
+    //abstract fun transferencia(destino: Conta, valor: Double): Boolean;
+    fun tranferencia(destino: br.com.alura.bytebank.models.Conta, valor: Double){
+    if(saldo < valor){
+        throw SaldoInsuficienteException();
+    }
+            this.sacar(valor);
+            destino.depositar(valor);
+    }
 }

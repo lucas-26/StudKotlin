@@ -21,8 +21,8 @@ class ContaCorrente(titular: Cliente, numero: Int)
         return valorComTaxa
     }
 
-    override fun transferencia(destino: Conta, valor: Double): Boolean {
-        TODO("Not yet implemented")
-    }
+    //override fun transferencia(destino: Conta, valor: Double): Boolean {
+//        TODO("Not yet implemented")
+//    }
 
 }

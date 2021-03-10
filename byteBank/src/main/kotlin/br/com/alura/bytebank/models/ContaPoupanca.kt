@@ -14,7 +14,7 @@ class ContaPoupanca(titular: Cliente, numero: Int)
         TODO("Not yet implemented")
     }
 
-    override fun transferencia(destino: Conta, valor: Double): Boolean {
+    fun transferencia(destino: Conta, valor: Double): Boolean {
         TODO("Not yet implemented")
     }
 

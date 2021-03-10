@@ -8,5 +8,12 @@ class Endereco(var logradouro: String="",
                var cep: String="",
                var complemento: String? = null)//Elvis operator
 {
+    fun enderecoCompleto() : String {
+        return """
+$logradouro - $numero, $bairro, $cidade, $estado
+$cep 
+$complemento
+            """.trimIndent()
+    }
 
 }

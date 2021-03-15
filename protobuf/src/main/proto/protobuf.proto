@@ -1,0 +1,40 @@
+syntax = "proto3"; //versão do protobuf que estamos usando
+
+option java_multiple_files = true;
+option java_package = "br.com.zup";
+option java_outer_classname = "FuncionarioServiceAlterClass";
+
+package br.com.zup; //pacote onde as classes serão geradas
+
+import "google/protobuf/timestamp.proto";
+
+service FuncionarioService {
+  rpc cadastrar(FuncionarioRequest) returns (FuncionarioResponse) {} //informando model do que eu vou mandar FuncionarioRequest e o que eu vou receber FuncionarioResponse
+}
+
+enum Cargo {//no caso do enum o valor padrão é sempre o primeiro
+  DEV = 0; //os numeros são usados pois ao fazer o bind dessas mensages elas viram binarios, com os numeros e possivel definir em que posição cada uma vai ficar
+  QA = 1;
+  GERENTE = 2;
+}
+
+message FuncionarioRequest {
+  string nome  = 1;
+  string cpf = 2 ;
+  int32 idade = 3;
+  double salario = 4;
+  bool ativo = 5;
+  Cargo cargo = 6;
+
+  message Endereco { //quando uma mensagem é criada dentro da outra, ela só fica acessivel para ser usada dentro da mensagem acima
+    string logradouro = 1;
+    string cep = 2;
+    string complemento = 3;
+  }
+  repeated Endereco enderecos = 7; // usamos o repeated para informar que a mensagem endereço pode se repetir, fazendo um paralelo com o spring, é como se fosse uma LIST
+}
+
+message FuncionarioResponse {
+  string  nome = 1;
+  google.protobuf.Timestamp criadoEm = 2;
+}
